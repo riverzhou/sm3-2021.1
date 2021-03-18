@@ -1,7 +1,7 @@
 /**
  ** Supermodel
  ** A Sega Model 3 Arcade Emulator.
- ** Copyright 2011-2020 Bart Trzynadlowski, Nik Henson, Ian Curtis,
+ ** Copyright 2011-2021 Bart Trzynadlowski, Nik Henson, Ian Curtis,
  **                     Harry Tuttle, and Spindizzi
  **
  ** This file is part of Supermodel.
@@ -1416,11 +1416,13 @@ static Util::Config::Node DefaultConfig()
   config.Set("XInputConstForceThreshold", "30");
   config.Set("XInputConstForceMax", "100");
   config.Set("XInputVibrateMax", "100");
+  config.Set("XInputStereoVibration", true);
   // SDL ForceFeedback
   config.Set("SDLConstForceMax", "100");
   config.Set("SDLSelfCenterMax", "100");
   config.Set("SDLFrictionMax", "100");
   config.Set("SDLVibrateMax", "100");
+  config.Set("SDLConstForceThreshold", "30");
 #ifdef NET_BOARD
   // NetBoard
   config.Set("EmulateNet", false);
@@ -1432,6 +1434,7 @@ static Util::Config::Node DefaultConfig()
   config.Set("SDLSelfCenterMax", "100");
   config.Set("SDLFrictionMax", "100");
   config.Set("SDLVibrateMax", "100");
+  config.Set("SDLConstForceThreshold", "30");
 #endif
   config.Set("Outputs", "none");
   return config;
@@ -1440,7 +1443,7 @@ static Util::Config::Node DefaultConfig()
 static void Title(void)
 {
   puts("Supermodel: A Sega Model 3 Arcade Emulator (Version " SUPERMODEL_VERSION ")");
-  puts("Copyright 2011-2020 by Bart Trzynadlowski, Nik Henson, Ian Curtis,");
+  puts("Copyright 2011-2021 by Bart Trzynadlowski, Nik Henson, Ian Curtis,");
   puts("                       Harry Tuttle, and Spindizzi\n");
 }
 
